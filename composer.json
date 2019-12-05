@@ -16,6 +16,8 @@
     "khalyomede/odata-query-parser": "0.*"
   },
   "autoload": {
-    "Khalyomede\\": "src"
+    "psr-4": {
+      "Khalyomede\\": "src"
+    }
   }
 }
