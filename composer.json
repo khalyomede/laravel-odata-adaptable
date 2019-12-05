@@ -1,0 +1,21 @@
+{
+  "name": "khalyomede/laravel-odata-adaptable",
+  "description": "Adapt your Eloquent model automatically according to the OData query strings.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Khalyomede",
+      "email": "khalyomede@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "illuminate/database": "5.8.*",
+    "php": ">=7.2.0",
+    "khalyomede/odata-query-parser": "0.*"
+  },
+  "autoload": {
+    "Khalyomede\\": "src"
+  }
+}
