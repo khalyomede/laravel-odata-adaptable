@@ -5,6 +5,7 @@ Adapt your Eloquent model automatically according to the OData query strings.
 ## Summary
 
 - [About](#about)
+- [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -15,6 +16,11 @@ Adapt your Eloquent model automatically according to the OData query strings.
 I needed to customize how my client side application fetches results from my Laravel REST API. Mostly, I just need to filter which fields I want to get from my API. I checked for [POData-Laravel](https://github.com/Algo-Web/POData-Laravel), but I found it too much strict.
 
 I wanted a drop-in solution, that does not change the way I work with my existing Eloquent models, so I decided to create this library.
+
+## Features
+
+- use a Trait on your model, which will make them automatically mutate the result according to the OData query strings
+- Support for the following OData keywords: `$select`
 
 ## Requirements
 
