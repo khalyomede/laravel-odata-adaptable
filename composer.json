@@ -11,13 +11,18 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "illuminate/database": "5.8.*",
-    "php": ">=7.2.0",
     "khalyomede/odata-query-parser": "0.*"
   },
   "autoload": {
     "psr-4": {
       "Khalyomede\\": "src"
     }
+  },
+  "require-dev": {
+    "laravel/framework": "5.8.*",
+    "phpunit/phpunit": "8.*"
+  },
+  "scripts": {
+    "test": "phpunit test"
   }
 }
