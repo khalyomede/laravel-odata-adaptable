@@ -22,6 +22,20 @@ trait OdataAdaptable {
 			$builder->addSelect(...$data["select"]);
 		}
 		
+		if (isset($data["top"])) {
+			$builder->limit($data["top"]);
+		}
+
+		if (isset($data["skip"])) {
+			$builder->skip($data["skip"]);
+		}
+
+		if (isset($data["orderBy"])) {
+			foreach ($data["orderBy"] as $orderBy) {
+				$builder->orderBy($orderBy["property"], $orderBy["direction"]);
+			}
+		}
+		
 		return $builder;
 	}
 
