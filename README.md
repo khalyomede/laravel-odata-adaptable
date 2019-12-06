@@ -50,7 +50,7 @@ use Illuminate\Database\Eloquent\Model;
 use Khalyomede\OdataAdaptable;
 
 class Book extends Model {
-	use OdataAdaptable;
+  use OdataAdaptable;
 }
 ```
 
