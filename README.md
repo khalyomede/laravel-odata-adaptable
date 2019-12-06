@@ -9,6 +9,8 @@ Adapt your Eloquent model automatically according to the OData query strings.
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Examples](#examples)
+- [API](#api)
 - [Known issues](#known-issues)
 
 ## About
@@ -108,6 +110,53 @@ And you will get
   }
 ]
 ```
+
+## Examples
+
+- [1. Calling it at the very first](#1-calling-it-at-the-very-first)
+- [2. Chaining it after previous call to the Eloquent query builder](#2-chaining-it-after-previous-call-to-the-eloquent-query-builder)
+
+### 1. Calling it at the very first
+
+In this example, we will call the `adapt` method to adapt our Eloquent ORM result according to the query strings received from the controller's request. The file below is extracted from an hypothetical controller.
+
+```php
+class BookController extends Controller {
+	public function index(Request $request) {
+		$books = Book::adapt($request)->get();
+	}
+}
+```
+
+### 2. Chaining it after previous call to the Eloquent query builder
+
+In this example, we will call the `adapt` method right after some methods, to show you how you can still take advantage of this library even after existing changes to the result of your Eloquent query.
+
+```php
+class VueJsBookController extends Controller {
+	public function index(Request $request) {
+		$books = Book::where("name", "like", "Vue.js")->adapt($request)->get();
+	}
+}
+```
+
+## API
+
+```php
+public function adapt(Illuminate\Http\Request $request): Illuminate\Database\Eloquent\Builder;
+```
+
+**parameters**
+
+- `Request $request`: The request from your Controller. It will be used to extract the URL using `$request->fullUrl()`.
+
+**return**
+
+An instance of `Builder` that let you chain other query builder methods.
+
+**exceptions**
+
+See all the exceptions thrown by [OdataQueryParser](https://packagist.org/packages/khalyomede/odata-query-parser).
 
 ## Known issues
 
