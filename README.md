@@ -71,9 +71,9 @@ use App\Book;
 use Illuminate\Http\Request;
 
 class BookController extends Controller {
-    public function index(Request $request) {
-		return Book::adapt($request)->get();
-	}
+  public function index(Request $request) {
+    return Book::adapt($request)->get();
+  }
 }
 ```
 
@@ -122,9 +122,9 @@ In this example, we will call the `adapt` method to adapt our Eloquent ORM resul
 
 ```php
 class BookController extends Controller {
-	public function index(Request $request) {
-		$books = Book::adapt($request)->get();
-	}
+  public function index(Request $request) {
+    $books = Book::adapt($request)->get();
+  }
 }
 ```
 
@@ -134,9 +134,9 @@ In this example, we will call the `adapt` method right after some methods, to sh
 
 ```php
 class VueJsBookController extends Controller {
-	public function index(Request $request) {
-		$books = Book::where("name", "like", "Vue.js")->adapt($request)->get();
-	}
+  public function index(Request $request) {
+    $books = Book::where("name", "like", "Vue.js")->adapt($request)->get();
+  }
 }
 ```
 
