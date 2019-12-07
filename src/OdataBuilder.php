@@ -3,6 +3,7 @@
 namespace Khalyomede;
 
 use Illuminate\Http\Request;
+use InvalidArgumentException;
 use Khalyomede\OdataQueryParser;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -11,6 +12,12 @@ class OdataBuilder extends Builder {
 		$data = OdataQueryParser::parse($request->fullUrl());
 
 		if (isset($data["select"])) {
+			$hiddenColumns = $this->model->getHidden();
+
+			if (is_array($hiddenColumns) && !empty(\array_intersect($hiddenColumns, $data["select"]))) {
+				throw new InvalidArgumentException("one of the columns in the \$select query string value of the request is part of the hidden columns of its Eloquent model");
+			}
+
 			$this->select(...$data["select"]);
 		}
 		

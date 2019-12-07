@@ -23,6 +23,9 @@ class Book extends Model {
 	use OdataAdaptable;
 
 	protected $table = "book";
+	protected $hidden = [
+		"authorId"
+	];
 }
 
 final class AdaptTest extends TestCase {	
@@ -32,12 +35,10 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 1,
 				"title" => "Build a website using Vue.js and Laravel",
-				"authorId" => 1
 			],
 			[
 				"id" => 2,
 				"title" => "The ultimate web bundler using Browserify and Gulp",
-				"authorId" => 1
 			]
 		];
 		$actual = Book::where("id", ">=", 1)->adapt($request)->get()->toArray();
@@ -51,12 +52,10 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 1,
 				"title" => "Build a website using Vue.js and Laravel",
-				"authorId" => 1
 			],
 			[
 				"id" => 2,
 				"title" => "The ultimate web bundler using Browserify and Gulp",
-				"authorId" => 1
 			]
 		];
 		$actual = Book::adapt($request)->get()->toArray();
@@ -100,7 +99,6 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 1,
 				"title" => "Build a website using Vue.js and Laravel",
-				"authorId" => 1
 			]
 		];
 		$actual = Book::where("id", ">=", 1)->adapt($request)->get()->toArray();
@@ -114,7 +112,6 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 1,
 				"title" => "Build a website using Vue.js and Laravel",
-				"authorId" => 1
 			]
 		];
 		$actual = Book::adapt($request)->get()->toArray();
@@ -128,7 +125,6 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 2,
 				"title" => "The ultimate web bundler using Browserify and Gulp",
-				"authorId" => 1
 			]
 		];
 		$actual = Book::where("id", ">=", 1)->adapt($request)->get()->toArray();
@@ -142,7 +138,6 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 2,
 				"title" => "The ultimate web bundler using Browserify and Gulp",
-				"authorId" => 1
 			]
 		];
 		$actual = Book::adapt($request)->get()->toArray();
@@ -156,12 +151,10 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 2,
 				"title" => "The ultimate web bundler using Browserify and Gulp",
-				"authorId" => 1
 			],
 			[
 				"id" => 1,
 				"title" => "Build a website using Vue.js and Laravel",
-				"authorId" => 1
 			],
 		];
 		$actual = Book::where("id", ">=", 1)->adapt($request)->get()->toArray();
@@ -175,16 +168,32 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 2,
 				"title" => "The ultimate web bundler using Browserify and Gulp",
-				"authorId" => 1
 			],
 			[
 				"id" => 1,
 				"title" => "Build a website using Vue.js and Laravel",
-				"authorId" => 1
 			],
 		];
 		$actual = Book::adapt($request)->get()->toArray();
 		
 		$this->assertEquals($expected, $actual);
+	}
+
+	public function testShouldThrowAnInvalidArgumentExceptionIfOneOfTheSelectColumnsIsPartOfHiddenColumns(): void {
+		$this->expectException(InvalidArgumentException::class);
+		$this->expectExceptionMessage("one of the columns in the \$select query string value of the request is part of the hidden columns of its Eloquent model");
+		
+		$request = Request::create('https://example.com/?$select=name,authorId', "GET");
+
+		Book::where("id", ">=", 1)->adapt($request);
+	}
+
+	public function testShouldThrowAnInvalidArgumentExceptionIfOneOfTheSelectColumnsIsPartOfHiddenColumnsWhenCallingAdaptStatically(): void {
+		$this->expectException(InvalidArgumentException::class);
+		$this->expectExceptionMessage("one of the columns in the \$select query string value of the request is part of the hidden columns of its Eloquent model");
+		
+		$request = Request::create('https://example.com/?$select=name,authorId', "GET");
+
+		Book::adapt($request);
 	}
 }
