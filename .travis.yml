@@ -6,7 +6,7 @@ script:
   - composer run test
   - composer run mutate
 after_success:
-  - travis_retry php vendor/bin/php-coveralls -v
+  - bin/php-coveralls -v
 env:
   global:
     secure: P95PN1CADHcH2zAJpN5W/2/88vsGIS8GicTkP6cYpoJSKKb+/mB8uRvJYOFmj+4hK/aJsxKGObNrSqxyhqT5PHx+IkHcQgRUTrLAJSwwvArhJ/Nd2vvdduKUZuvK3joD6x6lGv8BPy+x5u6ZsPYL1DhIy01yNYYPaGld+Qvip6WebJ/JNP5qmyvdbRFQd7+K9efe008viJUPoMzHN3o8QMGowrnQKNVtIqlA7THUuLxuDpRnQ1G95pnA+NSv6UHelzAMiTZ1yO/o23WsBOTUqjz4fyS1duoEkKQEb5X8rEPzXhvXxNFhBZ0ARjKcLLqJFmO7Lqk8umireumGi/wR+Sx3/FMJDysKp4tk0RJmAhMCy2t/bZ04ncuSyyS+Awn2y50/YmQsrG/USdE2ywU6n2dSAEFLSFv+gh7fSL6tOGSFa200CYN0pexDdKMlgrecpOnSRK+Srhd9rDTCFjvuDX175yW9ztV9b5h7HU1PgpYJIyA22gi24mKPuJstAKoHgzMCY71Yh9XqwYYMPRC2NU555WvKiL7KnBX75YYSGlOKMuXBVu44OafQ9EzKMVYSP6WvLJnLtDNer3OpmfCq1OMi3ZjnyJx6C5ICdu3E72rybEBS8ubF3z+mSPQQokQYlUIt1UqLIeocjsvef5jE8UF0Bvzd7+qP5rQCp6qfZGI=

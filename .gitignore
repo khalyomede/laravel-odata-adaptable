@@ -1,5 +1,4 @@
 /vendor/
-bin
 infection.log
 build
 .phpunit.result.cache
