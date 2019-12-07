@@ -2,7 +2,7 @@
 
 Adapt your Eloquent model automatically according to the OData query strings.
 
-[![Packagist Version](https://img.shields.io/packagist/v/khalyomede/laravel-odata-adaptable)](https://packagist.org/packages/khalyomede/laravel-odata-adaptable) [![Packagist](https://img.shields.io/packagist/l/khalyomede/laravel-odata-adaptable)](https://packagist.org/packages/khalyomede/laravel-odata-adaptable) [![Build Status](https://travis-ci.com/khalyomede/laravel-odata-adaptable.svg?branch=master)](https://travis-ci.com/khalyomede/laravel-odata-adaptable) [![Infection MSI](https://badge.stryker-mutator.io/github.com/khalyomede/laravel-odata-adaptable/master)](https://infection.github.io)
+[![Packagist Version](https://img.shields.io/packagist/v/khalyomede/laravel-odata-adaptable)](https://packagist.org/packages/khalyomede/laravel-odata-adaptable) [![Packagist](https://img.shields.io/packagist/l/khalyomede/laravel-odata-adaptable)](https://packagist.org/packages/khalyomede/laravel-odata-adaptable) [![Build Status](https://travis-ci.com/khalyomede/laravel-odata-adaptable.svg?branch=master)](https://travis-ci.com/khalyomede/laravel-odata-adaptable) [![Coverage Status](https://coveralls.io/repos/github/khalyomede/laravel-odata-adaptable/badge.svg?branch=master)](https://coveralls.io/github/khalyomede/laravel-odata-adaptable?branch=master) [![Infection MSI](https://badge.stryker-mutator.io/github.com/khalyomede/laravel-odata-adaptable/master)](https://infection.github.io)
 [![Maintainability](https://api.codeclimate.com/v1/badges/01c4e27c4f6b7d525ee4/maintainability)](https://codeclimate.com/github/khalyomede/laravel-odata-adaptable/maintainability)
 
 ## Summary
