@@ -20,9 +20,14 @@
   },
   "require-dev": {
     "laravel/framework": "5.8.*",
-    "phpunit/phpunit": "8.*"
+    "phpunit/phpunit": "8.*",
+    "infection/infection": "0.*"
   },
   "scripts": {
-    "test": "phpunit test"
+    "test": "phpunit test",
+    "mutate": "infection"
+  },
+  "config": {
+    "bin-dir": "bin"
   }
 }
