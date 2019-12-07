@@ -21,10 +21,11 @@
   "require-dev": {
     "laravel/framework": "5.8.*",
     "phpunit/phpunit": "8.*",
-    "infection/infection": "0.*"
+    "infection/infection": "0.*",
+    "php-coveralls/php-coveralls": "2.*"
   },
   "scripts": {
-    "test": "phpunit test",
+    "test": "phpunit --coverage-clover build/logs/clover.xml test",
     "mutate": "infection"
   },
   "config": {

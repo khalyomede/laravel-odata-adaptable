@@ -5,4 +5,9 @@
       <directory>test/**</directory>
     </testsuite>
   </testsuites>
+  <filter>
+    <whitelist>
+      <file>test/OdataAdaptable/AdaptTest.php</file>
+	</whitelist>
+  </filter>
 </phpunit>
