@@ -6,8 +6,10 @@
     </testsuite>
   </testsuites>
   <filter>
-    <whitelist>
+    <whitelist processUncoveredFilesFromWhitelist="true">
       <file>test/OdataAdaptable/AdaptTest.php</file>
+	  <file>src/OdataAdaptable.php</file>
+	  <file>src/OdataBuilder.php</file>
 	</whitelist>
   </filter>
 </phpunit>
