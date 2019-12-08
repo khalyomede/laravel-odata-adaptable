@@ -27,6 +27,8 @@ I wanted a drop-in solution, that does not change the way I work with my existin
 - use a Trait on your model, which will make them automatically mutate the result according to the OData query strings
 - Support for the following OData keywords: `$select`, `$orderBy`, `$top` and `$skip`
 - Throw an error if you use `$select` using `$hidden` columns
+- Tested with Laravel versions:
+  - 5.8.\*
 
 ## Requirements
 
