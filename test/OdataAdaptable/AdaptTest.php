@@ -35,10 +35,12 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 1,
 				"title" => "Build a website using Vue.js and Laravel",
+				"description" => "All you need to know to build scalable and fun to use web apps using the wonderful Laravel+Vue.js combo."
 			],
 			[
 				"id" => 2,
 				"title" => "The ultimate web bundler using Browserify and Gulp",
+				"description" => "Learn how to bundle a modern Javascript web app using Gulp and Browserify"
 			]
 		];
 		$actual = Book::where("id", ">=", 1)->adapt($request)->get()->toArray();
@@ -52,10 +54,12 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 1,
 				"title" => "Build a website using Vue.js and Laravel",
+				"description" => "All you need to know to build scalable and fun to use web apps using the wonderful Laravel+Vue.js combo."
 			],
 			[
 				"id" => 2,
 				"title" => "The ultimate web bundler using Browserify and Gulp",
+				"description" => "Learn how to bundle a modern Javascript web app using Gulp and Browserify"
 			]
 		];
 		$actual = Book::adapt($request)->get()->toArray();
@@ -99,6 +103,7 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 1,
 				"title" => "Build a website using Vue.js and Laravel",
+				"description" => "All you need to know to build scalable and fun to use web apps using the wonderful Laravel+Vue.js combo."
 			]
 		];
 		$actual = Book::where("id", ">=", 1)->adapt($request)->get()->toArray();
@@ -112,6 +117,7 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 1,
 				"title" => "Build a website using Vue.js and Laravel",
+				"description" => "All you need to know to build scalable and fun to use web apps using the wonderful Laravel+Vue.js combo."
 			]
 		];
 		$actual = Book::adapt($request)->get()->toArray();
@@ -125,6 +131,7 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 2,
 				"title" => "The ultimate web bundler using Browserify and Gulp",
+				"description" => "Learn how to bundle a modern Javascript web app using Gulp and Browserify"
 			]
 		];
 		$actual = Book::where("id", ">=", 1)->adapt($request)->get()->toArray();
@@ -138,6 +145,7 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 2,
 				"title" => "The ultimate web bundler using Browserify and Gulp",
+				"description" => "Learn how to bundle a modern Javascript web app using Gulp and Browserify"
 			]
 		];
 		$actual = Book::adapt($request)->get()->toArray();
@@ -151,11 +159,13 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 2,
 				"title" => "The ultimate web bundler using Browserify and Gulp",
+				"description" => "Learn how to bundle a modern Javascript web app using Gulp and Browserify"
 			],
 			[
 				"id" => 1,
 				"title" => "Build a website using Vue.js and Laravel",
-			],
+				"description" => "All you need to know to build scalable and fun to use web apps using the wonderful Laravel+Vue.js combo."
+			]
 		];
 		$actual = Book::where("id", ">=", 1)->adapt($request)->get()->toArray();
 		
@@ -168,11 +178,13 @@ final class AdaptTest extends TestCase {
 			[
 				"id" => 2,
 				"title" => "The ultimate web bundler using Browserify and Gulp",
+				"description" => "Learn how to bundle a modern Javascript web app using Gulp and Browserify"
 			],
 			[
 				"id" => 1,
 				"title" => "Build a website using Vue.js and Laravel",
-			],
+				"description" => "All you need to know to build scalable and fun to use web apps using the wonderful Laravel+Vue.js combo."
+			]
 		];
 		$actual = Book::adapt($request)->get()->toArray();
 		
